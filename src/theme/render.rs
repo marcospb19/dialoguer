@@ -254,7 +254,7 @@ impl<'a> TermThemeRenderer<'a> {
         let prefix_width = 2;
         //Check each item size, increment on finding an overflow
         for size in size_vec {
-            if *size > self.term.size().1 as usize {
+            if *size + prefix_width > self.term.size().1 as usize {
                 new_height += (((*size as f64 + prefix_width as f64) / self.term.size().1 as f64)
                     .ceil()) as usize
                     - 1;
